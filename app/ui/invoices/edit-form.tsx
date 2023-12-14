@@ -19,9 +19,9 @@ export default function EditInvoiceForm({
   invoice: InvoiceForm;
   customers: CustomerField[];
 }) {
-    const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
-    const initialState = { message: null, errors: {} };
-    const [state, dispatch] = useFormState(updateInvoiceWithId, initialState);
+  const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+  const initialState = { message: null, errors: {} };
+  const [state, dispatch] = useFormState(updateInvoiceWithId, initialState);
 
   return (
     <form action={dispatch}>
@@ -139,12 +139,10 @@ export default function EditInvoiceForm({
                   {error}
                 </p>
               ))}
-          </div>{' '}
+          </div>
           <div>
-            {state.errors ? (
+            {state.errors && (
               <p className="mt-2 text-sm text-red-500">{state.message}</p>
-            ) : (
-              ''
             )}
           </div>
         </fieldset>
