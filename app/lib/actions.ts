@@ -1,6 +1,6 @@
 'use server';
 
-import { signIn } from '@/auth';
+import { signIn, signOut } from '@/auth';
 import { AuthError } from 'next-auth';
 
 import { z } from 'zod';
@@ -26,6 +26,10 @@ export async function authenticate(
     throw error;
   }
 }
+
+export const signOutServerAction = async () => {
+  await signOut();
+};
 
 const FormSchema = z.object({
   id: z.string(),
