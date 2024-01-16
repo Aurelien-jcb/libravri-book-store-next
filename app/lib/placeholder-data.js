@@ -72,6 +72,16 @@ const customers = [
   },
 ];
 
+const books = [
+  {
+    user_id: customers[0].id,
+    category_id: customers[0].id,
+    title: 'Harry Potter',
+    created_date: '2022-12-06',
+    thumbnail: '/customers/balazs-orban.png',
+  },
+];
+
 const invoices = [
   {
     customer_id: customers[0].id,
@@ -185,4 +195,5 @@ module.exports = {
   customers,
   invoices,
   revenue,
+  books,
 };
